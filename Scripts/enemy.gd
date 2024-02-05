@@ -6,11 +6,12 @@ var start_position : Vector2
 var end_position : Vector2
 var moving_right = true
 var lifes = 3
+@export var final_position = 700
 @onready var anim = $AnimatedSprite2D
 
 func _ready():
 	start_position = position
-	end_position = Vector2(700, position.y) 
+	end_position = Vector2(final_position, position.y) 
 	anim.play("Walk")
 
 func _process(delta):
