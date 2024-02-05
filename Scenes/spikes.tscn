@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6i6bo682g7wu"]
+
+[ext_resource type="Script" path="res://Scripts/Spike.gd" id="1_gsx1c"]
+[ext_resource type="Texture2D" uid="uid://dwb2dkwogkjtb" path="res://Sprite/LevelMaker/Spike.png" id="1_yvqkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b65od"]
+size = Vector2(34, 9)
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_gsx1c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yvqkp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+texture = ExtResource("1_yvqkp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 4.5)
+shape = SubResource("RectangleShape2D_b65od")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

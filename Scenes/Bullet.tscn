@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkpn47yop2gvs"]
+
+[ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_w708x"]
+[ext_resource type="Texture2D" uid="uid://cf5efc2r3t5fh" path="res://Sprite/Player/Roca.png" id="1_ww88k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtg74"]
+radius = 7.0
+
+[node name="Bullet" type="Area2D" groups=["Bullet"]]
+script = ExtResource("1_w708x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ww88k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mtg74")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

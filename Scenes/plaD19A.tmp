@@ -1,0 +1,189 @@
+[gd_scene load_steps=18 format=3 uid="uid://b3dwqxs6w72f4"]
+
+[ext_resource type="Texture2D" uid="uid://dki0hkpxw601x" path="res://Sprite/Player/4.- Main_Character.png" id="1_6jiw5"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_8pewq"]
+[ext_resource type="PackedScene" uid="uid://dkpn47yop2gvs" path="res://Scenes/Bullet.tscn" id="2_h5vt0"]
+[ext_resource type="Texture2D" uid="uid://h83xjidlh1a8" path="res://Sprite/HUD/Heart.png" id="3_tj8nd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xstyd"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(42, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y468h"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(90, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv5ed"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(138, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l183"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(186, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4ddl"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(234, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lqcl"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(185, 145, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lamq"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(233, 145, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3k6j"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(88, 74, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi4xa"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(136, 74, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve7dq"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(184, 74, 48, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky3kt"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(44, 74, 44, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlaab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xstyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y468h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv5ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l183")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4ddl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_0lqcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lamq")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3k6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi4xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve7dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky3kt")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rj2ys"]
+radius = 15.0
+height = 40.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_8pewq")
+bullet_scene = ExtResource("2_h5vt0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mlaab")
+animation = &"Run"
+frame = 3
+frame_progress = 0.529453
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_rj2ys")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Corazon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(31, 30)
+scale = Vector2(3, 3)
+texture = ExtResource("3_tj8nd")
+
+[node name="Corazon2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(81, 30)
+scale = Vector2(3, 3)
+texture = ExtResource("3_tj8nd")
+
+[node name="Corazon3" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(131, 30)
+scale = Vector2(3, 3)
+texture = ExtResource("3_tj8nd")
+
+[node name="Corazon4" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(181, 30)
+scale = Vector2(3, 3)
+texture = ExtResource("3_tj8nd")
+
+[node name="Corazon5" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(231, 30)
+scale = Vector2(3, 3)
+texture = ExtResource("3_tj8nd")
+
+[node name="MenuPausa" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -12.0
+offset_top = 1.0
+offset_right = 959.0
+offset_bottom = 543.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuPausa"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.5
+offset_top = -82.0
+offset_right = 255.5
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reanude" type="Button" parent="CanvasLayer/MenuPausa/VBoxContainer"]
+texture_repeat = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Reanude"
+
+[node name="Restart" type="Button" parent="CanvasLayer/MenuPausa/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Restart"
+
+[node name="Exit" type="Button" parent="CanvasLayer/MenuPausa/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Exit
+"
+
+[connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Reanude" to="." method="_on_reanude_pressed"]

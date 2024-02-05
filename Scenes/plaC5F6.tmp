@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3dwqxs6w72f4"]
+
+[ext_resource type="Texture2D" uid="uid://dki0hkpxw601x" path="res://Sprite/Player/4.- Main_Character.png" id="1_6jiw5"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_8pewq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xstyd"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(42, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y468h"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(90, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv5ed"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(138, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l183"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(186, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4ddl"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(234, 38, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lqcl"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(185, 145, 46, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lamq"]
+atlas = ExtResource("1_6jiw5")
+region = Rect2(233, 145, 46, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlaab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xstyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y468h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv5ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l183")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4ddl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_0lqcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lamq")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rj2ys"]
+radius = 15.0
+height = 40.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_8pewq")
+max_speed = null
+jump_force = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mlaab")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_rj2ys")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(10, 0)
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
