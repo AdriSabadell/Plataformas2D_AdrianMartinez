@@ -187,3 +187,4 @@ text = "Exit
 "
 
 [connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Reanude" to="." method="_on_reanude_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
