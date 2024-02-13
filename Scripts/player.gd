@@ -34,7 +34,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		"velocity.y += get_gravity() * delta"
 
-	# Handle jump.
+	# Acciones.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		"jump()"
@@ -56,15 +56,14 @@ func get_gravity() -> float:
 
 """
 
-
+#Disparar
 func shoot():
 		var bullet = bullet_scene.instantiate()
 		bullet.position = global_position
 		get_parent().add_child(bullet)
-func pausa():
-	#get_tree().paused = true
-	$CanvasLayer/MenuPausa.visible = true
-	
+		
+
+#Vidas
 func loseLife(enemyposx):
 	if position.x < enemyposx:
 		velocity.x = -500
@@ -87,6 +86,8 @@ func loseLife(enemyposx):
 		heart4.visible = false
 	if lifes == 4:
 		heart5.visible = false
+
+
 func game_over():
 	#get_tree().reload_current_scene()
 	get_tree().call_deferred("reload_current_scene")
@@ -94,11 +95,13 @@ func game_over():
 func jump():
 	velocity.y = jump_velocity
 """
+
+#Pausa
+func pausa():
+	#get_tree().paused = true
+	$CanvasLayer/MenuPausa.visible = true
 func _on_reanude_pressed():
 	$CanvasLayer/MenuPausa.visible = false
 	#get_tree().paused = false
-
-
-
 func _on_exit_pressed():
 		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
