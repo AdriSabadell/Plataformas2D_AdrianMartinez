@@ -102,8 +102,8 @@ editor_draw_drag_margin = true
 position = Vector2(463, -15)
 
 [node name="Enemy2" parent="." instance=ExtResource("4_y2v35")]
-position = Vector2(2051, -15)
-final_position = 2200
+position = Vector2(2046, -15)
+final_position = 2230
 
 [node name="Spike" parent="." instance=ExtResource("5_oob8u")]
 position = Vector2(961, -1)
