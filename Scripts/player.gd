@@ -19,21 +19,10 @@ var lifes = 5
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var bullet_scene: PackedScene
 
-"""
-var jump_height : float
-var jump_time_to_peak : float
-var jump_time_to_descend : float
-
-@onready var jump_velocity : float = ((2.0 * jump_height)/ jump_time_to_peak) * -1.0
-@onready var jump_gravity : float = ((-2.0 * jump_height)/ (jump_time_to_peak * jump_time_to_peak)) * -1.0
-@onready var fall_gravity : float = ((-2.0 * jump_height)/ (jump_time_to_peak * jump_time_to_descend)) * -1.0
-"""
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		"velocity.y += get_gravity() * delta"
-
 	# Acciones.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -49,17 +38,12 @@ func _physics_process(delta):
 	
 	if global_position.y > 200:
 		game_over()
-	
-"""
-func get_gravity() -> float:
-	return jump_gravity if velocity.y < 0.0 else fall_gravity
-
-"""
 
 #Disparar
 func shoot():
 		var bullet = bullet_scene.instantiate()
-		bullet.position = global_position
+		var marker_position = $AnimatedSprite2D/Marker2D.global_position
+		bullet.position = marker_position
 		get_parent().add_child(bullet)
 		
 
@@ -91,11 +75,6 @@ func loseLife(enemyposx):
 func game_over():
 	#get_tree().reload_current_scene()
 	get_tree().call_deferred("reload_current_scene")
-"""
-func jump():
-	velocity.y = jump_velocity
-"""
-
 #Pausa
 func pausa():
 	#get_tree().paused = true

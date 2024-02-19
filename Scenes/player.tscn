@@ -114,6 +114,9 @@ animation = &"Run"
 frame = 3
 frame_progress = 0.529453
 
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(35, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 rotation = -1.5708
