@@ -149,6 +149,15 @@ position = Vector2(231, 30)
 scale = Vector2(3, 3)
 texture = ExtResource("3_tj8nd")
 
+[node name="Balas" type="Label" parent="CanvasLayer"]
+offset_left = 805.0
+offset_top = 447.0
+offset_right = 845.0
+offset_bottom = 538.0
+theme_override_font_sizes/font_size = 66
+text = "0
+"
+
 [node name="MenuPausa" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
@@ -190,4 +199,5 @@ text = "Exit
 "
 
 [connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Reanude" to="." method="_on_reanude_pressed"]
+[connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

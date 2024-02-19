@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds2nmivy6gpdy"]
+
+[ext_resource type="Texture2D" uid="uid://dl8ty1o5awim1" path="res://Sprite/HUD/Recarga.png" id="1_8humq"]
+[ext_resource type="Script" path="res://Scripts/recarga.gd" id="2_4nt07"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_un4l5"]
+radius = 7.5
+
+[node name="Recarga" type="Area2D"]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8humq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_un4l5")
+script = ExtResource("2_4nt07")
+
+[connection signal="body_entered" from="." to="CollisionShape2D" method="_on_body_entered"]
+[connection signal="body_entered" from="." to="CollisionShape2D" method="_on_recarga_body_entered"]

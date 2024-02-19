@@ -14,6 +14,7 @@ var lifes = 5
 @onready var heart3 : Sprite2D = get_node("CanvasLayer/Corazon3")
 @onready var heart4 : Sprite2D = get_node("CanvasLayer/Corazon4")
 @onready var heart5 : Sprite2D = get_node("CanvasLayer/Corazon5")
+@onready var score_text : Label = get_node("CanvasLayer/Balas")
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -38,7 +39,6 @@ func _physics_process(delta):
 	
 	if global_position.y > 200:
 		game_over()
-
 #Disparar
 func shoot():
 		var bullet = bullet_scene.instantiate()
@@ -70,6 +70,11 @@ func loseLife(enemyposx):
 		heart4.visible = false
 	if lifes == 4:
 		heart5.visible = false
+		
+		
+"""func add_score(amount):
+	Globals.Score += amount
+	score_text.text = str("Score: ", Globals.Score)"""
 
 
 func game_over():
@@ -82,5 +87,10 @@ func pausa():
 func _on_reanude_pressed():
 	$CanvasLayer/MenuPausa.visible = false
 	#get_tree().paused = false
+
 func _on_exit_pressed():
 		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+
+
+func _on_restart_pressed():
+		get_tree().call_deferred("reload_current_scene")
