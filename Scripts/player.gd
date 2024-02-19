@@ -76,7 +76,6 @@ func loseLife(enemyposx):
 	Globals.Score += amount
 	score_text.text = str("Score: ", Globals.Score)"""
 
-
 func game_over():
 	#get_tree().reload_current_scene()
 	get_tree().call_deferred("reload_current_scene")
@@ -90,7 +89,6 @@ func _on_reanude_pressed():
 
 func _on_exit_pressed():
 		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
-
 
 func _on_restart_pressed():
 		get_tree().call_deferred("reload_current_scene")
