@@ -16,5 +16,3 @@ func _on_area_entered(area):
 func _on_body_entered(body):
 	if body.is_in_group("Terreno"):
 		queue_free()
-		
-

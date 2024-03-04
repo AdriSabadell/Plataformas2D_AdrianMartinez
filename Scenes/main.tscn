@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cm1pqgfhhrtdy"]
+[gd_scene load_steps=12 format=3 uid="uid://cm1pqgfhhrtdy"]
 
 [ext_resource type="Texture2D" uid="uid://cfdqxhxggivhi" path="res://Sprite/LevelMaker/bloques unidos 1.png" id="1_skykd"]
 [ext_resource type="PackedScene" uid="uid://b3dwqxs6w72f4" path="res://Scenes/player.tscn" id="1_sw42u"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dy6tq2l6rom2f" path="res://Scenes/enemy.tscn" id="4_y2v35"]
 [ext_resource type="PackedScene" uid="uid://ds2nmivy6gpdy" path="res://Scenes/recarga.tscn" id="5_0kx4t"]
 [ext_resource type="PackedScene" uid="uid://b6i6bo682g7wu" path="res://Scenes/spikes.tscn" id="5_oob8u"]
+[ext_resource type="PackedScene" uid="uid://blcx7roioryje" path="res://Scenes/Levels/next_level.tscn" id="7_368vx"]
+[ext_resource type="PackedScene" uid="uid://c035f2hdgtlwb" path="res://Scenes/Enemy2Shoot.tscn" id="8_nnmnx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eh3i"]
 texture = ExtResource("1_skykd")
@@ -91,12 +93,13 @@ position = Vector2(-41, -39)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.7, 1.7)
 limit_left = -170
-limit_right = 2400
+limit_right = 2362
 limit_bottom = 108
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 drag_horizontal_offset = 0.35
+editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="Enemy" parent="." instance=ExtResource("4_y2v35")]
@@ -107,7 +110,17 @@ position = Vector2(2046, -15)
 final_position = 2230
 
 [node name="Recarga" parent="." instance=ExtResource("5_0kx4t")]
-position = Vector2(1336, -58)
+position = Vector2(229, -41)
 
 [node name="Spike" parent="." instance=ExtResource("5_oob8u")]
 position = Vector2(961, -1)
+
+[node name="NextLevel" parent="." instance=ExtResource("7_368vx")]
+position = Vector2(2434, 6)
+next_scene = "res://Scenes/Levels/Nivel2.tscn"
+
+[node name="Recarga2" parent="." instance=ExtResource("5_0kx4t")]
+position = Vector2(1339, -56)
+
+[node name="Enemy3" parent="." instance=ExtResource("8_nnmnx")]
+position = Vector2(881, -17)

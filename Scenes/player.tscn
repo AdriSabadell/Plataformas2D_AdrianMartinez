@@ -72,13 +72,13 @@ animations = [{
 "speed": 7.0
 }, {
 "frames": [{
-"duration": 4.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_0lqcl")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_8lamq")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
 "speed": 5.0
 }, {
@@ -110,9 +110,8 @@ bullet_scene = ExtResource("2_h5vt0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mlaab")
-animation = &"Run"
-frame = 3
-frame_progress = 0.529453
+animation = &"Jump"
+frame_progress = 0.767541
 
 [node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D"]
 position = Vector2(35, 0)

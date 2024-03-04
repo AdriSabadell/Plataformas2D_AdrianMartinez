@@ -8,13 +8,14 @@ radius = 7.5
 
 [node name="Recarga" type="Area2D"]
 scale = Vector2(2, 2)
+script = ExtResource("2_4nt07")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8humq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_un4l5")
-script = ExtResource("2_4nt07")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_body_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_recarga_body_entered"]
