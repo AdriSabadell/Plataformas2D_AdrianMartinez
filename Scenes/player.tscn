@@ -149,10 +149,10 @@ scale = Vector2(3, 3)
 texture = ExtResource("3_tj8nd")
 
 [node name="Balas" type="Label" parent="CanvasLayer"]
-offset_left = 872.0
-offset_top = 418.0
-offset_right = 912.0
-offset_bottom = 509.0
+offset_left = 1068.0
+offset_top = 539.0
+offset_right = 1108.0
+offset_bottom = 630.0
 theme_override_font_sizes/font_size = 66
 text = "0"
 
