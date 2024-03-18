@@ -123,4 +123,4 @@ next_scene = "res://Scenes/Levels/Nivel2.tscn"
 position = Vector2(1339, -56)
 
 [node name="Enemy3" parent="." instance=ExtResource("8_nnmnx")]
-position = Vector2(881, -17)
+position = Vector2(873, 3)

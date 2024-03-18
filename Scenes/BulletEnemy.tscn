@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://br8mbiqeskj14"]
+[gd_scene load_steps=4 format=3 uid="uid://br8mbiqeskj14"]
 
+[ext_resource type="Script" path="res://Scripts/BulletEnemy.gd" id="1_yb7vq"]
 [ext_resource type="Texture2D" uid="uid://cf5efc2r3t5fh" path="res://Sprite/Player/Roca.png" id="2_50t6j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mtg74"]
 radius = 7.0
 
-[node name="Bullet" type="Area2D" groups=["Bullet"]]
+[node name="Bullet" type="Area2D" groups=["BulletEnemy"]]
+script = ExtResource("1_yb7vq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

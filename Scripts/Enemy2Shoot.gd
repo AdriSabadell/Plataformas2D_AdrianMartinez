@@ -15,20 +15,23 @@ func _on_body_entered(body):
 	if body.is_in_group("Player"): # Verifica si el cuerpo es el jugador
 		jugador_en_area_vision = true
 		start_shooting()
+		print("EntraJugador")
 		
 
 func _on_body_exited(body):
 	if body.is_in_group("Player"): # Verifica si el cuerpo es el jugador
 		jugador_en_area_vision = false
+		print("JugadorSale")
 
 # Función para iniciar el disparo si el jugador está en el área de visión
 func start_shooting():
 	if jugador_en_area_vision:
 		set_process(true)
+		print("Llamada")
 
 # Función que se llama en cada frame
 func _process(delta):
-	if tiempo_ultimo_disparo >= tiempo_entre_disparos:
+	if jugador_en_area_vision and tiempo_ultimo_disparo >= tiempo_entre_disparos:
 		shoot()
 		tiempo_ultimo_disparo = 0.0
 	else:
@@ -36,9 +39,11 @@ func _process(delta):
 
 # Función para realizar el disparo
 func shoot():
-	"""var nueva_bala = bala.instantiate()
-	nueva_bala.global_position = global_position # Posición de la bala igual a la del enemigo
-	get_parent().add_child(nueva_bala) # Añade la bala como hijo del nodo padre del enemigo"""
+	var nueva_bala = bala.instantiate()
+	var marker_position = $Marker2D.global_position
+	nueva_bala.position = marker_position
+	#nueva_bala.global_position = global_position # Posición de la bala igual a la del enemigo
+	get_parent().add_child(nueva_bala) # Añade la bala como hijo del nodo padre del enemigo
 	print("Disparo Enemigo")
 
 

@@ -1,12 +1,12 @@
 extends Area2D
 
-var velocidad = 450
+var velocidad : int
 
 func _ready():
-	pass  
+	pass
 
 func _process(delta):
-	position.x += velocidad * delta
+	global_position.x += velocidad * delta
 
 func _on_area_entered(area):
 	if area.is_in_group("Enemy"):
@@ -16,3 +16,4 @@ func _on_area_entered(area):
 func _on_body_entered(body):
 	if body.is_in_group("Terreno"):
 		queue_free()
+

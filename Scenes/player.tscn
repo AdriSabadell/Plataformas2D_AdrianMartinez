@@ -154,7 +154,7 @@ offset_top = 418.0
 offset_right = 912.0
 offset_bottom = 509.0
 theme_override_font_sizes/font_size = 66
-text = "5"
+text = "0"
 
 [node name="MenuPausa" type="Control" parent="CanvasLayer"]
 visible = false
