@@ -28,6 +28,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		$SonidoAndar.playing = false
 
 	# Acciones.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
@@ -38,6 +39,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("Escape"):
 		pausa()
+
 	var input_strength = Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left")
 	velocity.x = lerp(velocity.x, input_strength * SPEED, ACCELERATION * delta)
 	move_and_slide()
@@ -97,7 +99,8 @@ func loseLife(enemyposx):
 		heart4.visible = false
 	if lifes == 4:
 		heart5.visible = false
-		
+	
+	$SonidoGolpe.playing = true
 
 #Recargar
 func add_bullets():

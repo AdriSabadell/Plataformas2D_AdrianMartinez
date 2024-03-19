@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c035f2hdgtlwb"]
+[gd_scene load_steps=6 format=3 uid="uid://c035f2hdgtlwb"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy2Shoot.gd" id="1_lnoer"]
 [ext_resource type="Texture2D" uid="uid://dbieufo5jw4ea" path="res://Sprite/Enemy/enemigo 2.png" id="2_n0syi"]
+[ext_resource type="AudioStream" uid="uid://caqni48donsg5" path="res://Sound/disparoEnemigo.wav" id="3_y1dx3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xi2hd"]
 radius = 16.0
@@ -28,6 +29,9 @@ position = Vector2(-15, 0)
 [node name="Area de vision" type="CollisionShape2D" parent="." groups=["Vision"]]
 position = Vector2(-159, -5)
 shape = SubResource("RectangleShape2D_08op6")
+
+[node name="SonidoDisparo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y1dx3")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

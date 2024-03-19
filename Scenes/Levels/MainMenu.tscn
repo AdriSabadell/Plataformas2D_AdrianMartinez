@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bemcywk8pqv6x"]
+[gd_scene load_steps=3 format=3 uid="uid://bemcywk8pqv6x"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_ct1te"]
+[ext_resource type="AudioStream" uid="uid://bdgbce3i7rnvx" path="res://Music/CancionBase.wav" id="2_acbs1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -39,6 +40,11 @@ text = "Play"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VBoxContainer"]
+stream = ExtResource("2_acbs1")
+volume_db = -12.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

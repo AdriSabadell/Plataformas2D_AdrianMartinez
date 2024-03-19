@@ -42,6 +42,7 @@ func shoot():
 	var nueva_bala = bala.instantiate()
 	var marker_position = $Marker2D.global_position
 	nueva_bala.position = marker_position
+	$SonidoDisparo.playing = true
 	#nueva_bala.global_position = global_position # Posición de la bala igual a la del enemigo
 	get_parent().add_child(nueva_bala) # Añade la bala como hijo del nodo padre del enemigo
 	print("Disparo Enemigo")

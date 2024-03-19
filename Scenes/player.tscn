@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3dwqxs6w72f4"]
+[gd_scene load_steps=20 format=3 uid="uid://b3dwqxs6w72f4"]
 
 [ext_resource type="Texture2D" uid="uid://dki0hkpxw601x" path="res://Sprite/Player/4.- Main_Character.png" id="1_6jiw5"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8pewq"]
 [ext_resource type="PackedScene" uid="uid://dkpn47yop2gvs" path="res://Scenes/Bullet.tscn" id="2_h5vt0"]
 [ext_resource type="Texture2D" uid="uid://h83xjidlh1a8" path="res://Sprite/HUD/Heart.png" id="3_tj8nd"]
+[ext_resource type="AudioStream" uid="uid://c88xvrop6ii5u" path="res://Sound/SonidoCaminar.wav" id="5_7hm27"]
+[ext_resource type="AudioStream" uid="uid://ec07118ly8oa" path="res://Sound/GolpeaJugador.wav" id="5_j37py"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xstyd"]
 atlas = ExtResource("1_6jiw5")
@@ -160,10 +162,10 @@ text = "0"
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = -12.0
-offset_top = 1.0
-offset_right = 959.0
-offset_bottom = 543.0
+offset_left = 87.0
+offset_top = 56.0
+offset_right = 1058.0
+offset_bottom = 598.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuPausa"]
 layout_mode = 1
@@ -195,6 +197,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 55
 text = "Exit
 "
+
+[node name="SonidoAndar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7hm27")
+volume_db = 20.612
+
+[node name="SonidoGolpe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_j37py")
+volume_db = -5.0
 
 [connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Reanude" to="." method="_on_reanude_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
