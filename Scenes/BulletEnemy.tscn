@@ -18,3 +18,4 @@ shape = SubResource("CircleShape2D_mtg74")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered_terrain"]
