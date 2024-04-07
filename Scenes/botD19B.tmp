@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk62ra3tu2ngf"]
+
+[ext_resource type="Texture2D" uid="uid://dprlmqrmrkakx" path="res://Sprite/HUD/botiquin.png" id="1_536m2"]
+[ext_resource type="Script" path="res://Scripts/Botiquin.gd" id="2_nkcs1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qgwal"]
+radius = 16.1245
+
+[node name="Botiquin" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("1_536m2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qgwal")
+script = ExtResource("2_nkcs1")
+
+[connection signal="body_entered" from="." to="CollisionShape2D" method="_on_botiquin_body_entered"]

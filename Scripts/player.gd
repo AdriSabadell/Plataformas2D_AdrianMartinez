@@ -110,7 +110,12 @@ func add_bullets():
 	score_text.text = str(num_bullets)
 	print("Recarga")
 
-
+func add_life():
+	lifes = 5
+	heart5.visible = true
+	heart4.visible = true
+	heart3.visible = true
+	heart2.visible = true
 func game_over():
 	#get_tree().reload_current_scene()
 	get_tree().call_deferred("reload_current_scene")

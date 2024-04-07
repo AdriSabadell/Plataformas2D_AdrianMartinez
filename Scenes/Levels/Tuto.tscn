@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnp8mhyeno5mw"]
+[gd_scene load_steps=12 format=3 uid="uid://dnp8mhyeno5mw"]
 
 [ext_resource type="Texture2D" uid="uid://cfdqxhxggivhi" path="res://Sprite/LevelMaker/bloques unidos 1.png" id="1_4ft8g"]
 [ext_resource type="Texture2D" uid="uid://5a7nwkwapjvc" path="res://Sprite/LevelMaker/bloques unidos 2.png" id="2_wblix"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ds2nmivy6gpdy" path="res://Scenes/recarga.tscn" id="5_owi0y"]
 [ext_resource type="PackedScene" uid="uid://c035f2hdgtlwb" path="res://Scenes/Enemy2Shoot.tscn" id="6_qcwg4"]
 [ext_resource type="PackedScene" uid="uid://b6i6bo682g7wu" path="res://Scenes/spikes.tscn" id="7_u5yb2"]
+[ext_resource type="PackedScene" uid="uid://bk62ra3tu2ngf" path="res://Scenes/botiquin.tscn" id="8_1co5j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5eh3i"]
 texture = ExtResource("1_4ft8g")
@@ -121,5 +122,8 @@ position = Vector2(3081, -109)
 position = Vector2(2032, -108)
 
 [node name="Enemy3" parent="." instance=ExtResource("4_gqsgf")]
-position = Vector2(3232, -30)
+position = Vector2(3236, -31)
 final_position = 3420
+
+[node name="Botiquin" parent="." instance=ExtResource("8_1co5j")]
+position = Vector2(2778, -163)
