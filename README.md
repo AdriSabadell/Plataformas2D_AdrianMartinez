@@ -15,3 +15,10 @@
 - [x] So.
 - [x] Feedback de mal.
 
+## Controles:
+
+A&D: Movimiento izquierda y derecha
+
+Barra espaciadora: Saltar
+
+Click izquierdo: Disparar
