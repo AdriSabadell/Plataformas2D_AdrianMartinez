@@ -110,20 +110,11 @@ height = 40.0
 script = ExtResource("1_8pewq")
 bullet_scene = ExtResource("2_h5vt0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_mlaab")
-animation = &"Jump"
-frame_progress = 0.767541
-
-[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D"]
-position = Vector2(35, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-rotation = -1.5708
-shape = SubResource("CapsuleShape2D_rj2ys")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Fondo" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(581.556, 326)
+scale = Vector2(4.52778, 4.52778)
 
 [node name="Corazon" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(31, 30)
@@ -197,6 +188,19 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 55
 text = "Exit
 "
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mlaab")
+animation = &"Jump"
+frame_progress = 0.767541
+
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(35, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_rj2ys")
 
 [node name="SonidoAndar" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_7hm27")

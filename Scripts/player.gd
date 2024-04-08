@@ -17,15 +17,13 @@ var lifes = 5
 @onready var heart5 : Sprite2D = get_node("CanvasLayer/Corazon5")
 @onready var score_text : Label = get_node("CanvasLayer/Balas")
 
-# Declaración de la variable num_bullets en el alcance de la clase
 var num_bullets = 0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var bullet_scene: PackedScene
 
 func _physics_process(delta):
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		$SonidoAndar.playing = false
@@ -69,7 +67,6 @@ func shoot():
 	get_parent().add_child(bullet)
 	# Disminuir el número de balas
 	num_bullets -= 1
-	# Actualizar el texto de la etiqueta
 	score_text.text = str(num_bullets)
 	if anim.scale.x == 1 :
 		bullet.velocidad = 450
@@ -104,8 +101,6 @@ func loseLife(enemyposx):
 
 #Recargar
 func add_bullets():
-	#Globals.Score += amount
-	#score_text.text = str("Score: ", Globals.Score)
 	num_bullets = 5
 	score_text.text = str(num_bullets)
 	print("Recarga")
@@ -117,15 +112,12 @@ func add_life():
 	heart3.visible = true
 	heart2.visible = true
 func game_over():
-	#get_tree().reload_current_scene()
 	get_tree().call_deferred("reload_current_scene")
 #Pausa
 func pausa():
-	#get_tree().paused = true
 	$CanvasLayer/MenuPausa.visible = true
 func _on_reanude_pressed():
 	$CanvasLayer/MenuPausa.visible = false
-	#get_tree().paused = false
 
 func _on_exit_pressed():
 		get_tree().change_scene_to_file("res://Scenes/Levels/MainMenu.tscn")

@@ -29,13 +29,13 @@ func move_enemy(delta):
 	
 	translate(velocity * delta)
 
-	# Verificar si alcanzó el punto final o inicial
+	
 	if moving_right and position.x > end_position.x:
 		moving_right = false
-		$AnimatedSprite2D.scale.x = -1  # Invertir horizontalmente
+		$AnimatedSprite2D.scale.x = -1  
 	elif not moving_right and position.x < start_position.x:
 		moving_right = true
-		$AnimatedSprite2D.scale.x = 1  # Restablecer la escala horizontal
+		$AnimatedSprite2D.scale.x = 1 
 	
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
