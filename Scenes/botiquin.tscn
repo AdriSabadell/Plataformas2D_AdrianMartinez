@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bk62ra3tu2ngf"]
 
 [ext_resource type="Texture2D" uid="uid://dprlmqrmrkakx" path="res://Sprite/HUD/botiquin.png" id="1_536m2"]
-[ext_resource type="Script" path="res://Scenes/botiquin.gd" id="1_oea0q"]
+[ext_resource type="Script" path="res://Scripts/botiquin.gd" id="1_oea0q"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgwal"]
 radius = 16.1245

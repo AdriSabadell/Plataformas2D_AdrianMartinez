@@ -65,6 +65,7 @@ func shoot():
 	var marker_position = $AnimatedSprite2D/Marker2D.global_position
 	bullet.position = marker_position
 	get_parent().add_child(bullet)
+	$SonidoDisparo.playing = true
 	# Disminuir el número de balas
 	num_bullets -= 1
 	score_text.text = str(num_bullets)
@@ -72,7 +73,7 @@ func shoot():
 		bullet.velocidad = 450
 	if anim.scale.x == -1:
 		bullet.velocidad =-450
-
+		
 
 #Vidas
 func loseLife(enemyposx):

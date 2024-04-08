@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3dwqxs6w72f4"]
+[gd_scene load_steps=21 format=3 uid="uid://b3dwqxs6w72f4"]
 
 [ext_resource type="Texture2D" uid="uid://dki0hkpxw601x" path="res://Sprite/Player/4.- Main_Character.png" id="1_6jiw5"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_8pewq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://h83xjidlh1a8" path="res://Sprite/HUD/Heart.png" id="3_tj8nd"]
 [ext_resource type="AudioStream" uid="uid://c88xvrop6ii5u" path="res://Sound/SonidoCaminar.wav" id="5_7hm27"]
 [ext_resource type="AudioStream" uid="uid://ec07118ly8oa" path="res://Sound/GolpeaJugador.wav" id="5_j37py"]
+[ext_resource type="AudioStream" uid="uid://cu36uu87rfhvr" path="res://Sound/Roca rompiendose.wav" id="7_q3vc6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xstyd"]
 atlas = ExtResource("1_6jiw5")
@@ -209,6 +210,10 @@ volume_db = 20.612
 [node name="SonidoGolpe" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_j37py")
 volume_db = -5.0
+
+[node name="SonidoDisparo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_q3vc6")
+volume_db = 4.685
 
 [connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Reanude" to="." method="_on_reanude_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuPausa/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
