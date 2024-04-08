@@ -142,3 +142,12 @@ position = Vector2(2126, -36)
 stream = ExtResource("10_xasmi")
 volume_db = -12.0
 autoplay = true
+
+[node name="Recarga2" parent="." instance=ExtResource("5_ofkm7")]
+position = Vector2(1352, -109)
+
+[node name="Recarga3" parent="." instance=ExtResource("5_ofkm7")]
+position = Vector2(3002, -234)
+
+[node name="Recarga4" parent="." instance=ExtResource("5_ofkm7")]
+position = Vector2(2936, 19)
