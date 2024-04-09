@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bmeqhflo3o0v1"]
+[gd_scene load_steps=15 format=3 uid="uid://bmeqhflo3o0v1"]
 
 [ext_resource type="Texture2D" uid="uid://cfdqxhxggivhi" path="res://Sprite/LevelMaker/bloques unidos 1.png" id="1_wcax7"]
 [ext_resource type="Texture2D" uid="uid://5a7nwkwapjvc" path="res://Sprite/LevelMaker/bloques unidos 2.png" id="2_drq0y"]
+[ext_resource type="Texture2D" uid="uid://bor08q5bf5sq5" path="res://Sprite/Player/3.- Bakground_forest.png" id="2_i4w1w"]
 [ext_resource type="PackedScene" uid="uid://b3dwqxs6w72f4" path="res://Scenes/player.tscn" id="3_fdfad"]
 [ext_resource type="PackedScene" uid="uid://dy6tq2l6rom2f" path="res://Scenes/enemy.tscn" id="4_xid3v"]
 [ext_resource type="PackedScene" uid="uid://ds2nmivy6gpdy" path="res://Scenes/recarga.tscn" id="5_ofkm7"]
@@ -99,9 +100,25 @@ drag_horizontal_offset = 0.35
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D"]
-position = Vector2(-0.999969, 0.5)
-scale = Vector2(2.64844, 2.67361)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player/Camera2D"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Player/Camera2D/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D/ParallaxBackground/ParallaxLayer"]
+position = Vector2(-2, 1)
+scale = Vector2(3.02273, 3.04861)
+texture = ExtResource("2_i4w1w")
+centered = false
+
+[node name="Label" type="Label" parent="Player/Camera2D/ParallaxBackground"]
+offset_left = 879.0
+offset_top = 15.0
+offset_right = 1436.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 71
+text = "Level 3"
 
 [node name="TileMap" type="TileMap" parent="." groups=["Terreno"]]
 tile_set = SubResource("TileSet_7xxaj")

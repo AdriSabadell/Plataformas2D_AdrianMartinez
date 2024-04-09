@@ -99,6 +99,27 @@ drag_horizontal_offset = 0.35
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Player/Camera2D"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Player/Camera2D/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(768, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D/ParallaxBackground/ParallaxLayer"]
+position = Vector2(-8.99999, -16.0001)
+scale = Vector2(3.02273, 3.04861)
+texture = ExtResource("9_xyjo4")
+centered = false
+
+[node name="Label" type="Label" parent="Player/Camera2D/ParallaxBackground"]
+top_level = true
+offset_left = 870.0
+offset_top = 8.0
+offset_right = 1427.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 71
+text = "Level 2"
+
 [node name="TileMap" type="TileMap" parent="." groups=["Terreno"]]
 tile_set = SubResource("TileSet_7xxaj")
 format = 2
@@ -128,24 +149,28 @@ position = Vector2(1339, -56)
 position = Vector2(873, 3)
 
 [node name="1" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(-160.778, -134.5)
 scale = Vector2(3.29861, 3.29861)
 texture = ExtResource("9_xyjo4")
 
 [node name="2" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(683.222, -134.5)
 scale = Vector2(3.29861, 3.29861)
 texture = ExtResource("9_xyjo4")
 
 [node name="3" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(1527.22, -134.5)
 scale = Vector2(3.29861, 3.29861)
 texture = ExtResource("9_xyjo4")
 
 [node name="4" type="Sprite2D" parent="."]
+visible = false
 show_behind_parent = true
 position = Vector2(2368, -134.5)
 scale = Vector2(3.29861, 3.29861)
